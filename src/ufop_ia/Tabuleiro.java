@@ -20,12 +20,14 @@ public class Tabuleiro {
                 tab[i][j]=0;
             }
         }  
-        //Posiciona Lobo e as 4 Ovelhas
-        tab[0][1]=-1;
-        tab[7][0]=1;
-        tab[7][2]=2;
-        tab[7][4]=3;
-        tab[7][6]=4;
+        //Posiciona Lobo e as 4 Ovelhas para 8X8
+        if(numLine==8&&numColumn==8){
+            tab[0][1]=-1;
+            tab[7][0]=1;
+            tab[7][2]=2;
+            tab[7][4]=3;
+            tab[7][6]=4;
+        }
     }
     
     /**
