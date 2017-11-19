@@ -20,15 +20,48 @@ public class Tabuleiro {
                 tab[i][j]=0;
             }
         }  
+    }
+    
+    public Tabuleiro(int[][] tab){
+        this.tab = tab;
+    }
+    
+    
+    public void iniciaTabuleiro(){
         //Posiciona Lobo e as 4 Ovelhas para 8X8
-        if(numLine==8&&numColumn==8){
+        if(tab.length==8&&tab[0].length==8){
             tab[0][1]=-1;
             tab[7][0]=1;
             tab[7][2]=2;
             tab[7][4]=3;
             tab[7][6]=4;
-        }
+        } 
     }
+    
+    public int[][] getTab() {
+        return tab;
+    }
+
+    public void setTab(int[][] tab) {
+        this.tab = tab;
+    }
+    
+    public int[] buscaPosicao(int idPeca){
+        int posicao [] = new int[2];
+        for(int i=0;i<tab.length;i++){
+            for(int j=0;j<tab[0].length;j++){
+                if(tab[i][j]==idPeca){
+                    posicao[0]=i;
+                    posicao[1]=j;
+                    break;
+                }
+                
+            }                
+        }
+        
+        return posicao;
+    }
+    
     
     /**
      *
