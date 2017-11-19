@@ -9,14 +9,6 @@ package ufop_ia;
  *
  * @author arthu
  */
-public class Ufop_ia {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("teste");
-    }
+public class MiniMax {
     
 }
