@@ -9,7 +9,7 @@ package ufop_ia;
  *
  * @author jean
  */
-public class Tabuleiro {
+public class Tabuleiro implements Cloneable{
     
     private int tab[][];
     
@@ -80,6 +80,11 @@ public class Tabuleiro {
             tabuleiro = tabuleiro.concat("\n");
         }
         return tabuleiro;
+    }
+    
+    @Override
+    public Tabuleiro clone() throws CloneNotSupportedException {
+        return (Tabuleiro) super.clone();
     }
     
 }
