@@ -44,7 +44,7 @@ public class MiniMax {
             return st.getValue().doubleValue();
         }
         
-        Double v = Double.NEGATIVE_INFINITY;
+        Double v = Double.POSITIVE_INFINITY;
         for(Tabuleiro filhos : st.estadosAlcancaveis(player)){
             v = Math.min(v, maxValue(new EstadoJogo(filhos), nextPlayer(player)));
         }
