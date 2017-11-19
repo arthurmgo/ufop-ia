@@ -10,5 +10,12 @@ package ufop_ia;
  * @author arthu
  */
 public class MiniMax {
+    public static void main(String[] args) {
+      
+        System.out.print("ok");
+        
+        
+    }
+    
     
 }
