@@ -6,6 +6,7 @@
 package ufop_ia;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -14,9 +15,10 @@ import java.util.ArrayList;
 public class EstadoJogo {
 
     private Tabuleiro tab;
+    public  boolean naoapagar = false;
     
     // Estou tentando criar uma arvore
-    private ArrayList<EstadoJogo> filhos;
+    public ArrayList<EstadoJogo> filhos;
     
     private double value;
 
@@ -46,10 +48,11 @@ public class EstadoJogo {
     public ArrayList<Tabuleiro> tabuleirosAlcancaveis(int idVez) {
         ArrayList<Tabuleiro> alcancaveis = new ArrayList<Tabuleiro>();
         if (idVez == 0) {
-            int posicaoLobo[];
-            posicaoLobo = tab.buscaPosicao(-1);
-            int line = posicaoLobo[0];
-            int column = posicaoLobo[1];
+          int posicaoLobo[];
+           posicaoLobo = tab.buscaPosicao(-1);
+           int line = posicaoLobo[0];
+           int column = posicaoLobo[1];
+      
             //4 diagonais possiveis
 
             //Primeira Diagonal
@@ -66,7 +69,6 @@ public class EstadoJogo {
 
                     tabNovo[posicaoLobo[0]][posicaoLobo[1]] = 0;
                     tabNovo[line][column] = -1;
-
                     Tabuleiro novoTab = new Tabuleiro(tabNovo);
                     alcancaveis.add(novoTab);
                 }
@@ -113,6 +115,7 @@ public class EstadoJogo {
                     tabNovo[posicaoLobo[0]][posicaoLobo[1]] = 0;
                     tabNovo[line][column] = -1;
                     Tabuleiro novoTab = new Tabuleiro(tabNovo);
+                 
                     alcancaveis.add(novoTab);
                 }
 
@@ -146,10 +149,12 @@ public class EstadoJogo {
             //4 ovelhas podem se movimentar
 
             //ovelha 1
-            int posicaoOvelha1[];
-            posicaoOvelha1 = tab.buscaPosicao(1);
-            int line = posicaoOvelha1[0];
-            int column = posicaoOvelha1[1];
+           int posicaoOvelha1[];
+           posicaoOvelha1 = tab.buscaPosicao(1);
+          int line = posicaoOvelha1[0];
+           int column = posicaoOvelha1[1];
+          //  System.out.println(Arrays.toString(tab.getPosicao()));
+
             //2 diagonais possiveis
 
             //1 diagonal
@@ -195,10 +200,12 @@ public class EstadoJogo {
             }
 
             //ovelha 2
-            int posicaoOvelha2[];
-            posicaoOvelha2 = tab.buscaPosicao(2);
-            line = posicaoOvelha2[0];
-            column = posicaoOvelha2[1];
+        int posicaoOvelha2[];
+        posicaoOvelha2 = tab.buscaPosicao(2);
+        line = posicaoOvelha2[0];
+         column = posicaoOvelha2[1];
+            
+
             //2 diagonais possiveis
 
             //1 diagonal
@@ -216,7 +223,7 @@ public class EstadoJogo {
                     tabNovo[line][column] = 2;
 
                     Tabuleiro novoTab = new Tabuleiro(tabNovo);
-                    alcancaveis.add(novoTab);
+                alcancaveis.add(novoTab);
                 }
 
             }
@@ -244,10 +251,11 @@ public class EstadoJogo {
             }
 
             //ovelha 3
-            int posicaoOvelha3[];
-            posicaoOvelha3 = tab.buscaPosicao(3);
-            line = posicaoOvelha3[0];
+          int posicaoOvelha3[];
+          posicaoOvelha3 = tab.buscaPosicao(3);
+          line = posicaoOvelha3[0];
             column = posicaoOvelha3[1];
+
             //2 diagonais possiveis
 
             //1 diagonal
@@ -293,10 +301,11 @@ public class EstadoJogo {
             }
 
             //ovelha 4
-            int posicaoOvelha4[];
-            posicaoOvelha4 = tab.buscaPosicao(4);
-            line = posicaoOvelha4[0];
-            column = posicaoOvelha4[1];
+           int posicaoOvelha4[];
+           posicaoOvelha4 = tab.buscaPosicao(4);
+           line = posicaoOvelha4[0];
+           column = posicaoOvelha4[1];
+            
             //2 diagonais possiveis
 
             //1 diagonal
@@ -336,6 +345,7 @@ public class EstadoJogo {
                     tabNovo[line][column] = 4;
 
                     Tabuleiro novoTab = new Tabuleiro(tabNovo);
+
                     alcancaveis.add(novoTab);
                 }
 

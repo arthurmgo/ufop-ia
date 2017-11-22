@@ -11,10 +11,11 @@ package ufop_ia;
  */
 public class App {
     public static void main(String[] args) {
-        Tabuleiro t1 = new Tabuleiro(4, 4);
-       // t1.iniciaTabuleiro4();
-        int tab[][]={{0,0,0,0},{0,0,0,0},{0,0,0,-1},{1,0,2,0}};
-        t1.setTab(tab);
+        Tabuleiro t1 = new Tabuleiro(4,4);
+      // t1.iniciaTabuleiro();
+    // int tab[][]={{0,-1,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0},{1,0,2,0,3}};
+       int tab[][]={{0,-1,0,0},{0,0,0,0},{0,0,0,0},{1,0,2,0}};
+       t1.setTab(tab);
         EstadoJogo inicial = new EstadoJogo(t1);
         
         //System.out.println(inicial.getTab());
@@ -29,7 +30,7 @@ public class App {
         MiniMax m1 = new MiniMax();
         
         System.out.println("estado:\n"+m1.miniMaxDecision(inicial));
-        
+        System.out.println("Numero de estados:"+m1.contador);
         
         
         //System.out.println(m1.miniMaxDecision(inicial, 1).getTab());
